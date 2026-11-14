@@ -1,0 +1,68 @@
+// test_game.qua — Game logic simulation
+
+int main():
+
+    print("Game Logic Test")
+
+    // Player state
+    var hp = 100
+    var mp = 50
+    var atk = 25
+    var def = 10
+
+    // Enemy state
+    var enemy_hp = 80
+    var enemy_atk = 15
+
+    // Combat round 1
+    var dmg_to_enemy = atk - def
+    var dmg_to_player = enemy_atk - def
+
+    if dmg_to_enemy < 0:
+        MOV dmg_to_enemy 1
+    end!
+
+    if dmg_to_player < 0:
+        MOV dmg_to_player 1
+    end!
+
+    var enemy_hp_after = enemy_hp - dmg_to_enemy
+    var hp_after = hp - dmg_to_player
+
+    print(enemy_hp_after)
+    print(hp_after)
+
+    // Check winner
+    if enemy_hp_after <= 0:
+        print("Player wins!")
+    else:
+        print("Battle continues")
+    end!
+
+    // Math for physics
+    var spd = 10
+    var time_val = 5
+    var dist_val = spd * time_val
+    print(dist_val)
+
+    // Clamp health
+    var new_hp = clamp(hp_after, 0, 100)
+    print(new_hp)
+
+    // Pythagorean distance
+    var dx = 3
+    var dy = 4
+    var px = dx * dx
+    var py = dy * dy
+    var dist = sqrt(px + py)
+    print(dist)
+
+    // Random-like via fibonacci
+    var seed = fibonacci(7)
+    print(seed)
+
+    // Scoring
+    var score = abs(dmg_to_enemy) * 10
+    print(score)
+
+    print("Game Done")

@@ -1,0 +1,72 @@
+// test_simulation.qua — Physics simulation
+
+int main():
+
+    print("Simulation Test")
+
+    // Gravitational constant (integer approx)
+    var g = 10
+
+    // Projectile
+    var v0 = 20
+    var angle = 45
+    var t = 2
+
+    // Kinematic
+    var vy = v0 - g * t
+    print(vy)
+
+    var vx = v0
+    var pos_x = vx * t
+    var pos_y = vy * t
+    print(pos_x)
+    print(pos_y)
+
+    // Spring force: F = -k*x
+    var k = 5
+    var x_disp = 3
+    var force = k * x_disp
+    print(force)
+
+    // Energy: E = 0.5*k*x^2
+    var kx2 = k * x_disp * x_disp
+    print(kx2)
+
+    // Vector magnitude
+    var vx2 = 3
+    var vy2 = 4
+    var v2sq = vx2 * vx2 + vy2 * vy2
+    var vmag = sqrt(v2sq)
+    print(vmag)
+
+    // Damping
+    var vel = 100
+    var damp = 90
+    var damped = vel * damp
+    print(damped)
+
+    // Clamp velocity
+    var clamped_vel = clamp(vel, 0, 50)
+    print(clamped_vel)
+
+    // Sin/Cos for rotation (integer approximation)
+    var angle_rad = 0
+    var cs = cos(angle_rad)
+    print(cs)
+
+    var sn = sin(angle_rad)
+    print(sn)
+
+    // Matrix-like 2x2 mult (manual)
+    var m00 = 1
+    var m01 = 2
+    var m10 = 3
+    var m11 = 4
+    var v0_x = 1
+    var v0_y = 1
+    var rv_x = m00 * v0_x + m01 * v0_y
+    var rv_y = m10 * v0_x + m11 * v0_y
+    print(rv_x)
+    print(rv_y)
+
+    print("Simulation Done")

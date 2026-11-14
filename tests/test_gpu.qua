@@ -1,0 +1,23 @@
+// test_gpu.qua — GPU and hardware keyword tests
+
+int main():
+
+    print("GPU Test")
+
+    // GPU init stub
+    gpu_init()
+
+    // GPU memory
+    gpu_alloc(1024)
+    print("gpu alloc done")
+
+    // GPU sync
+    gpu_sync()
+
+    // GPU info
+    gpu_info()
+
+    // GPU shutdown
+    gpu_shutdown()
+
+    print("GPU Done")

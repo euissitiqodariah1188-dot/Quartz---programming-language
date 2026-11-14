@@ -1,0 +1,40 @@
+// test_number_theory.qua — Number theory tests
+
+int main():
+
+    print("Number Theory Tests")
+
+    var g = gcd(48, 18)
+    print(g)
+
+    var l = lcm(4, 6)
+    print(l)
+
+    var p1 = isprime(2)
+    print(p1)
+
+    var p2 = isprime(17)
+    print(p2)
+
+    var p3 = isprime(18)
+    print(p3)
+
+    var f1 = factorial(5)
+    print(f1)
+
+    var f2 = factorial(10)
+    print(f2)
+
+    var fib5 = fibonacci(5)
+    print(fib5)
+
+    var fib10 = fibonacci(10)
+    print(fib10)
+
+    var c1 = comb(5, 2)
+    print(c1)
+
+    var c2 = perm(5, 2)
+    print(c2)
+
+    print("Done")

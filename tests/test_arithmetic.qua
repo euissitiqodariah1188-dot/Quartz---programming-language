@@ -1,0 +1,50 @@
+// test_arithmetic.qua — Arithmetic and logic tests
+
+int main():
+
+    var a = 100
+    var b = 7
+    var c = a + b
+    print(c)
+
+    var d = a - b
+    print(d)
+
+    var e = a * b
+    print(e)
+
+    var f = a / b
+    print(f)
+
+    var g = a - (a / b) * b
+    print(g)
+
+    var neg = abs(-99)
+    print(neg)
+
+    var mn = min(10, 20)
+    print(mn)
+
+    var mx = max(10, 20)
+    print(mx)
+
+    var cl = clamp(150, 0, 100)
+    print(cl)
+
+    var pw = pow(2, 8)
+    print(pw)
+
+    var sq = sqrt(144)
+    print(sq)
+
+    if a > b:
+        print("a is greater")
+    end!
+
+    if b == 7:
+        print("b is 7")
+    end!
+
+    if a != b:
+        print("not equal")
+    end!

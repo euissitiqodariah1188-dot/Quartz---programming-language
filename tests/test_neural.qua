@@ -1,0 +1,68 @@
+// test_neural.qua — Neural network forward pass
+
+int main():
+
+    print("Neural Net Forward Pass")
+
+    // Layer 1 weights
+    var w11 = 1
+    var w12 = 2
+    var w21 = 3
+    var w22 = 4
+    var b1 = 1
+    var b2 = 1
+
+    // Input
+    var x1 = 1
+    var x2 = 0
+
+    // Layer 1 activations
+    var z1 = w11 * x1 + w12 * x2 + b1
+    var z2 = w21 * x1 + w22 * x2 + b2
+    print(z1)
+    print(z2)
+
+    // Sigmoid activation
+    var a1 = sigmoid(z1)
+    print(a1)
+
+    var a2 = sigmoid(z2)
+    print(a2)
+
+    // ReLU
+    var r1 = relu(z1)
+    print(r1)
+
+    var r2 = relu(-5)
+    print(r2)
+
+    // Loss (MSE)
+    var target = 1
+    var pred = a1
+    var diff = pred - target
+    var loss = diff * diff
+    print(loss)
+
+    // Gradient of sigmoid: s*(1-s)
+    var grad = a1 * (1 - a1)
+    print(grad)
+
+    // Weight update SGD
+    var lr = 0
+    var w11_new = w11 - lr * grad
+    print(w11_new)
+
+    // Math ops
+    var sq = sqrt(16)
+    print(sq)
+
+    var ab = abs(-42)
+    print(ab)
+
+    var mn = min(10, 20)
+    print(mn)
+
+    var mx = max(10, 20)
+    print(mx)
+
+    print("Done")

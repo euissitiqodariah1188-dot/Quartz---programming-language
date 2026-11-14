@@ -1,0 +1,49 @@
+// test_ml.qua — Machine Learning example in Quartz
+// Simple neuron forward pass
+
+int main():
+
+    print("Quartz ML Test")
+
+    // Neuron weights
+    var w1 = 0.5
+    var w2 = -0.3
+    var bias = 0.1
+
+    // Input values
+    var x1 = 1.0
+    var x2 = 0.5
+
+    // Weighted sum
+    var z = w1*x1 + w2*x2 + bias
+    print(z)
+
+    // Activation: sigmoid
+    var out = sigmoid(z)
+    print(out)
+
+    // Activation: relu
+    var r = relu(-0.5)
+    print(r)
+
+    var r2 = relu(2.5)
+    print(r2)
+
+    // Softmax (single value test)
+    var s = sigmoid(1.0)
+    print(s)
+
+    // Statistical functions
+    var loss = pow(out - 1.0, 2)
+    print(loss)
+
+    // Gradient (derivative of sigmoid)
+    var grad = out * (1 - out)
+    print(grad)
+
+    // Weight update (SGD)
+    var lr = 0.01
+    var w1_new = w1 - lr * grad
+    print(w1_new)
+
+    print("ML test complete")

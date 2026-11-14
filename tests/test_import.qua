@@ -1,0 +1,23 @@
+// test_import.qua — Import and using tests
+
+import "quartz.math"
+import "quartz.io"
+
+int main():
+
+    print("Import test")
+
+    var x = 16
+    var s = sqrt(x)
+    print(s)
+
+    var y = pow(2, 10)
+    print(y)
+
+    var g = gcd(24, 36)
+    print(g)
+
+    var f = factorial(6)
+    print(f)
+
+    print("Import done")

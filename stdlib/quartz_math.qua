@@ -1,0 +1,243 @@
+// ============================================================
+//  quartz.math — Standard Math Library for Quartz
+//  Built-in package (always available via: import "quartz.math")
+// ============================================================
+
+// ---- Basic arithmetic ----
+func qz_add(a, b):
+    return a + b
+end!
+
+func qz_sub(a, b):
+    return a - b
+end!
+
+func qz_mul(a, b):
+    return a * b
+end!
+
+func qz_div(a, b):
+    return a / b
+end!
+
+func qz_mod(a, b):
+    return mod(a, b)
+end!
+
+func qz_pow(base, exp):
+    return pow(base, exp)
+end!
+
+// ---- Rounding ----
+func qz_abs(x):
+    return abs(x)
+end!
+
+func qz_ceil(x):
+    return ceil(x)
+end!
+
+func qz_floor(x):
+    return floor(x)
+end!
+
+func qz_round(x):
+    return round(x)
+end!
+
+// ---- Clamp / Lerp ----
+func qz_clamp(x, lo, hi):
+    return clamp(x, lo, hi)
+end!
+
+func qz_lerp(a, b, t):
+    return lerp(a, b, t)
+end!
+
+func qz_min(a, b):
+    return min(a, b)
+end!
+
+func qz_max(a, b):
+    return max(a, b)
+end!
+
+// ---- Square root / power ----
+func qz_sqrt(x):
+    return sqrt(x)
+end!
+
+func qz_cbrt(x):
+    return pow(x, 0.333333333333333)
+end!
+
+func qz_hypot(a, b):
+    return sqrt(a*a + b*b)
+end!
+
+// ---- Trigonometry ----
+func qz_sin(x):
+    return sin(x)
+end!
+
+func qz_cos(x):
+    return cos(x)
+end!
+
+func qz_tan(x):
+    return tan(x)
+end!
+
+func qz_asin(x):
+    return asin(x)
+end!
+
+func qz_acos(x):
+    return acos(x)
+end!
+
+func qz_atan(x):
+    return atan(x)
+end!
+
+func qz_atan2(y, x):
+    return atan2(y, x)
+end!
+
+func qz_deg_to_rad(deg):
+    return deg * 0.01745329251994329
+end!
+
+func qz_rad_to_deg(rad):
+    return rad * 57.29577951308232
+end!
+
+// ---- Logarithm / exp ----
+func qz_log(x):
+    return log(x)
+end!
+
+func qz_log2(x):
+    return log2(x)
+end!
+
+func qz_log10(x):
+    return log10(x)
+end!
+
+func qz_exp(x):
+    return exp(x)
+end!
+
+// ---- Statistics ----
+func qz_mean(arr):
+    return mean(arr)
+end!
+
+func qz_median(arr):
+    return median(arr)
+end!
+
+func qz_variance(arr):
+    return variance(arr)
+end!
+
+func qz_stddev(arr):
+    return stddev(arr)
+end!
+
+// ---- Number theory ----
+func qz_gcd(a, b):
+    return gcd(a, b)
+end!
+
+func qz_lcm(a, b):
+    return lcm(a, b)
+end!
+
+func qz_isprime(n):
+    return isprime(n)
+end!
+
+func qz_factorial(n):
+    return factorial(n)
+end!
+
+func qz_fibonacci(n):
+    return fibonacci(n)
+end!
+
+func qz_combination(n, k):
+    return comb(n, k)
+end!
+
+func qz_permutation(n, k):
+    return perm(n, k)
+end!
+
+// ---- Vector 2D ----
+func qz_vec2_add(ax, ay, bx, by):
+    var rx = ax + bx
+    var ry = ay + by
+    print(rx)
+    print(ry)
+end!
+
+func qz_vec2_dot(ax, ay, bx, by):
+    return ax*bx + ay*by
+end!
+
+func qz_vec2_len(x, y):
+    return sqrt(x*x + y*y)
+end!
+
+// ---- Vector 3D ----
+func qz_vec3_dot(ax, ay, az, bx, by, bz):
+    return ax*bx + ay*by + az*bz
+end!
+
+func qz_vec3_len(x, y, z):
+    return sqrt(x*x + y*y + z*z)
+end!
+
+// ---- ML activation ----
+func qz_sigmoid(x):
+    return sigmoid(x)
+end!
+
+func qz_relu(x):
+    return relu(x)
+end!
+
+func qz_tanh_act(x):
+    return tanh_act(x)
+end!
+
+func qz_leaky_relu(x, alpha):
+    if x > 0:
+        return x
+    else:
+        return alpha * x
+    end!
+end!
+
+func qz_elu(x, alpha):
+    if x >= 0:
+        return x
+    else:
+        return alpha * (exp(x) - 1)
+    end!
+end!
+
+// ---- Entropy / info theory ----
+func qz_entropy(probs):
+    return entropy(probs)
+end!
+
+func qz_pearson(a, b):
+    return pearson(a, b)
+end!
+
+func qz_covariance(a, b):
+    return covariance(a, b)
+end!

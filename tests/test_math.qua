@@ -1,0 +1,49 @@
+// test_math.qua — Math operations test
+
+int main():
+
+    // util:: math
+    util::12+12
+    util::100*200
+
+    // Math functions
+    var s = sqrt(16)
+    print(s)
+
+    var p = pow(2, 10)
+    print(p)
+
+    var a = abs(-42)
+    print(a)
+
+    var mx = max(10, 20)
+    print(mx)
+
+    var mn = min(10, 20)
+    print(mn)
+
+    var c = clamp(150, 0, 100)
+    print(c)
+
+    // Trig
+    var sine = sin(0)
+    print(sine)
+
+    var cosine = cos(0)
+    print(cosine)
+
+    // Factorial
+    var f = factorial(5)
+    print(f)
+
+    // Fibonacci
+    var fib = fibonacci(10)
+    print(fib)
+
+    // GCD
+    var g = gcd(48, 18)
+    print(g)
+
+    // Prime check
+    var ip = isprime(17)
+    print(ip)

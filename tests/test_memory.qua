@@ -1,0 +1,23 @@
+// test_memory.qua — Memory management tests
+
+int main():
+
+    print("Memory Test")
+
+    // Allocate memory
+    mem_alloc(buf, 256, 8)
+    print("alloc done")
+
+    // CPU barrier
+    cpu_barrier()
+
+    // Memory fence
+    mem_fence()
+
+    // NOP
+    nop()
+
+    // CPU pause
+    cpu_pause()
+
+    print("Memory Done")

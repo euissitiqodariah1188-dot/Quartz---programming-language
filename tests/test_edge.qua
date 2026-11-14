@@ -1,0 +1,102 @@
+// test_edge.qua — Edge cases
+
+int main():
+
+    // Zero
+    var z = 0
+    print(z)
+
+    // Large numbers
+    var big = 1000000
+    print(big)
+
+    // Negative
+    var neg = abs(-1000)
+    print(neg)
+
+    // Boolean
+    var t = true
+    var f = false
+    print(t)
+    print(f)
+
+    // NaN check
+    var n = Nan
+    print(n)
+
+    // Chained comparisons
+    var a = 5
+    var b = 10
+    var c = 15
+
+    if a < b:
+        if b < c:
+            print("a < b < c")
+        end!
+    end!
+
+    // Deep nesting
+    if a < c:
+        if a != b:
+            if b != c:
+                print("all different")
+            end!
+        end!
+    end!
+
+    // MOV then print
+    var x = 0
+    MOV x 42
+    print(x)
+
+    // ADD then print
+    var y = 10
+    add y 5
+    print(y)
+
+    // Functions calling other functions
+    func double(n):
+        return n * 2
+    end!
+
+    func quad(n):
+        var d = double(n)
+        return double(d)
+    end!
+
+    var q = quad(3)
+    print(q)
+
+    // Math edge: abs of zero
+    var abs_zero = abs(0)
+    print(abs_zero)
+
+    // Max of equal values
+    var mx = max(5, 5)
+    print(mx)
+
+    // Min of equal values
+    var mn = min(7, 7)
+    print(mn)
+
+    // Clamp when already in range
+    var cl = clamp(50, 0, 100)
+    print(cl)
+
+    // GCD of same numbers
+    var g = gcd(12, 12)
+    print(g)
+
+    // Prime: 2 is prime
+    var p = isprime(2)
+    print(p)
+
+    // Factorial of 0
+    var f0 = factorial(0)
+    print(f0)
+
+    // Fibonacci of 1
+    var fib1 = fibonacci(1)
+    print(fib1)
+
+    print("Edge cases done")

@@ -1,0 +1,39 @@
+// test_strings.qua — String handling tests
+
+int main():
+
+    var s1 = "hello"
+    print(s1)
+
+    var s2 = "world"
+    print(s2)
+
+    var greeting = "Hello, Quartz!"
+    print(greeting)
+
+    var blank = ""
+    print(blank)
+
+    var num_str = "12345"
+    print(num_str)
+
+    var special = "Line with spaces and 123 numbers"
+    print(special)
+
+    if true:
+        print("string in if block")
+    end!
+
+    func say(msg):
+        print(msg)
+    end!
+
+    say("function call with string")
+    say("second call")
+
+    var msg1 = "Quartz"
+    var msg2 = "Programming"
+    var msg3 = "Language"
+    print(msg1)
+    print(msg2)
+    print(msg3)

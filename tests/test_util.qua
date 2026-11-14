@@ -1,0 +1,20 @@
+// test_util.qua — util:: math expressions
+
+int main():
+
+    util::1+1
+    util::10*10
+    util::100/4
+    util::7+8
+    util::2*2*2
+    util::1000-1
+
+    var x = 5
+    var y = 10
+    var z = x + y
+    print(z)
+
+    var a = z * 2
+    print(a)
+
+    print("util tests done")

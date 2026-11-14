@@ -1,0 +1,65 @@
+// ============================================================
+//  quartz.io — Standard I/O Library for Quartz
+// ============================================================
+
+func qz_print(msg):
+    print(msg)
+end!
+
+func qz_println(msg):
+    print(msg)
+end!
+
+func qz_read_line():
+    var v = input("")
+    return v
+end!
+
+func qz_read_int():
+    var v = input("Enter integer: ")
+    return strtoint(v)
+end!
+
+func qz_read_float():
+    var v = input("Enter float: ")
+    return strtofloat(v)
+end!
+
+func qz_print_int(n):
+    var s = strfromint(n)
+    print(s)
+end!
+
+func qz_print_float(f):
+    var s = strfromfloat(f)
+    print(s)
+end!
+
+func qz_print_bool(b):
+    if b:
+        print("true")
+    else:
+        print("false")
+    end!
+end!
+
+func qz_print_arr(arr):
+    var s = "["
+    print(s)
+end!
+
+func qz_file_read_all(path):
+    return file_readall(path)
+end!
+
+func qz_file_write_all(path, data):
+    file_writeall(path, data)
+end!
+
+func qz_file_exists(path):
+    return file_exists(path)
+end!
+
+func qz_dir_list(path):
+    return dir_list(path)
+end!

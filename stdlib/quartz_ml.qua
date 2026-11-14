@@ -1,0 +1,175 @@
+// ============================================================
+//  quartz.ml — Machine Learning Library for Quartz
+//  Designed for complex ML, neural networks, AI
+// ============================================================
+
+// ---- Activation functions ----
+func qz_sigmoid(x):
+    return sigmoid(x)
+end!
+
+func qz_relu(x):
+    return relu(x)
+end!
+
+func qz_leaky_relu(x, alpha):
+    if x >= 0:
+        return x
+    else:
+        return alpha * x
+    end!
+end!
+
+func qz_elu(x, alpha):
+    if x >= 0:
+        return x
+    else:
+        return alpha * (exp(x) - 1)
+    end!
+end!
+
+func qz_tanh(x):
+    return tanh_act(x)
+end!
+
+func qz_swish(x):
+    return x * sigmoid(x)
+end!
+
+func qz_softmax(arr):
+    return softmax(arr)
+end!
+
+// ---- Loss functions ----
+func qz_mse(pred, target):
+    var diff = pred - target
+    return pow(diff, 2)
+end!
+
+func qz_mae(pred, target):
+    return abs(pred - target)
+end!
+
+func qz_cross_entropy(p, q):
+    return 0 - (p * log(q + 0.000001))
+end!
+
+func qz_binary_crossentropy(y_true, y_pred):
+    var eps = 0.000001
+    var t1 = y_true * log(y_pred + eps)
+    var t2 = (1 - y_true) * log(1 - y_pred + eps)
+    return 0 - (t1 + t2)
+end!
+
+func qz_hinge_loss(y_true, y_pred):
+    var v = 1 - y_true * y_pred
+    if v > 0:
+        return v
+    else:
+        return 0
+    end!
+end!
+
+// ---- Gradient descent step ----
+func qz_sgd_step(weight, grad, lr):
+    return weight - lr * grad
+end!
+
+func qz_momentum_step(weight, velocity, grad, lr, momentum):
+    var v_new = momentum * velocity - lr * grad
+    var w_new = weight + v_new
+    return w_new
+end!
+
+// ---- Normalization ----
+func qz_batch_norm(x, mean_val, std_val, gamma, beta):
+    var x_norm = (x - mean_val) / (std_val + 0.000001)
+    return gamma * x_norm + beta
+end!
+
+func qz_layer_norm(x, mean_val, std_val):
+    return (x - mean_val) / (std_val + 0.000001)
+end!
+
+func qz_dropout(x, rate, training):
+    if training:
+        var keep = 1 - rate
+        return x * keep
+    else:
+        return x
+    end!
+end!
+
+// ---- Embedding ----
+func qz_dot_product(a, b):
+    return dot(a, b)
+end!
+
+func qz_cosine_similarity(a, b):
+    var d = dot(a, b)
+    var ma = magnitude(a)
+    var mb = magnitude(b)
+    return d / (ma * mb + 0.000001)
+end!
+
+// ---- Convolution ----
+func qz_conv1d(input, kernel):
+    return conv(input, kernel)
+end!
+
+// ---- FFT for signal processing ----
+func qz_fft(signal):
+    return fft(signal)
+end!
+
+func qz_ifft(spectrum):
+    return ifft(spectrum)
+end!
+
+// ---- Accuracy metric ----
+func qz_accuracy(pred, target):
+    if pred == target:
+        return 1
+    else:
+        return 0
+    end!
+end!
+
+// ---- Weight initialization ----
+func qz_xavier_init(fan_in, fan_out):
+    var limit = sqrt(6.0 / (fan_in + fan_out))
+    return limit
+end!
+
+func qz_he_init(fan_in):
+    return sqrt(2.0 / fan_in)
+end!
+
+// ---- Attention mechanism ----
+func qz_scaled_dot_attention(q, k, v, dim):
+    var scale = sqrt(dim)
+    var score = dot(q, k) / scale
+    var w = softmax(score)
+    return dot(w, v)
+end!
+
+// ---- Statistical helpers ----
+func qz_mean(arr):
+    return mean(arr)
+end!
+
+func qz_variance(arr):
+    return variance(arr)
+end!
+
+func qz_std(arr):
+    return stddev(arr)
+end!
+
+func qz_pearson_corr(a, b):
+    return pearson(a, b)
+end!
+
+func qz_entropy_info(probs):
+    return entropy(probs)
+end!

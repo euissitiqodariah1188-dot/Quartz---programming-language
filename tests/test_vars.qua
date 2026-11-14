@@ -1,0 +1,23 @@
+// test_vars.qua — Variable and math tests
+
+int main():
+
+    var x = 10
+    var y = 20
+    var z = x + y
+    print(z)
+
+    var pi = 3.14159
+    var r = 5
+    var area = pi * r * r
+    print(area)
+
+    var name = "quartz"
+    print(name)
+
+    var flag = true
+    if flag:
+        print("flag is true")
+    else:
+        print("flag is false")
+    end!

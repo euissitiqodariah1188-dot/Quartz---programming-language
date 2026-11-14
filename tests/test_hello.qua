@@ -1,0 +1,5 @@
+// test_hello.qua — Basic hello world test
+
+int main():
+
+    print("hello world")
